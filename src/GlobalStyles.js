@@ -17,7 +17,6 @@ html {
 }
 body {
   font-family: 'Work Sans', sans-serif;
-  background-color: rgba(0, 0, 0, 0.1);
   width: 100vw;
   height: 100vh;
 }
