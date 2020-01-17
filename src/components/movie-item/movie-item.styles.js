@@ -1,21 +1,36 @@
 import styled from "styled-components";
 
 export const MovieItem = styled.div`
-  width: 70%;
-  height: 20rem;
+  width: 30rem;
+  height: 40rem;
   background-color: rgb(0, 0, 0, 0.8);
   box-shadow: 0 1rem 2rem rgb(0, 0, 0, 0.9);
-  display: flex;
-  align-items: center;
   color: white;
+  margin: 0 3rem;
+  margin-bottom: 3rem;
 `;
 
-export const MovieItemImg = styled.img`
-  width: 30rem;
-  height: 100%;
+export const MovieItemImg = styled.div`
+  width: 100%;
+  height: 80%;
+  background-image: ${props => `url(${props.src})`};
+  background-size: cover;
+  background-position: center;
 `;
 
 export const MovieItemTitle = styled.h1`
-  font-size: 3rem;
-  margin-left: 5rem;
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  width: 100%;
+  word-wrap: break-word;
+  text-align: center;
+`;
+
+export const MovieDescription = styled.p`
+  font-size: 1.5rem;
+  margin: 1.5rem 2rem;
+  width: 100%;
+  word-wrap: break-word;
+  justify-self: center;
 `;
