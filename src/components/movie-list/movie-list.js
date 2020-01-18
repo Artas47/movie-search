@@ -13,6 +13,8 @@ export const MovieList = () => {
       {state.movies.Search.map(item => {
         return (
           <MovieItem
+            key={item.imdbID}
+            id={item.imdbID}
             poster={item.Poster}
             title={item.Title}
             description={item.Description}

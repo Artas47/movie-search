@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const MovieItem = styled.div`
+export const MovieItem = styled(Link)`
   width: 30rem;
   height: 40rem;
   background-color: rgb(0, 0, 0, 0.8);
@@ -8,6 +9,7 @@ export const MovieItem = styled.div`
   color: white;
   margin: 0 3rem;
   margin-bottom: 3rem;
+  text-decoration: none;
 `;
 
 export const MovieItemImg = styled.div`
