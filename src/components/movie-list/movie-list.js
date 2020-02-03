@@ -4,13 +4,18 @@ import * as Styled from "./movie-list.styles";
 import { useStateValue } from "../../context/state";
 
 export const MovieList = () => {
-  const [state, dispatch] = useStateValue();
-  if (!state.movies.Search) {
+  const [{ movies }, dispatch] = useStateValue();
+  if (!movies.Search) {
     return <div></div>;
   }
+  let filteredMovies = [...new Set(movies.Search.map(item => item.imdbID))].map(
+    id => {
+      return movies.Search.find(a => a.imdbID === id);
+    }
+  );
   return (
     <Styled.MovieList>
-      {state.movies.Search.map(item => {
+      {filteredMovies.map(item => {
         return (
           <MovieItem
             key={item.imdbID}
