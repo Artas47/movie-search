@@ -11,6 +11,7 @@ export const Input = styled.input`
   height: 5rem;
   text-decoration: none;
   display: flex;
+  justify-content: center;
   transition: all 0.2s;
   position: relative;
   ::placeholder {

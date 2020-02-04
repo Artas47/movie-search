@@ -3,13 +3,17 @@ import ReactDOM from "react-dom";
 import * as Styled from "./modal.styles";
 import { useHistory } from "react-router-dom";
 
-const Modal = props => {
+const Modal = ({ movie }) => {
   let history = useHistory();
   const renderModalContent = () => {
     return (
       <Styled.Modal onClick={() => history.push("/")}>
         <Styled.ModalContent onClick={e => e.stopPropagation()}>
-          {props.plot}
+          <Styled.ModalImage src={movie.Poster} />
+          <Styled.ModalDescription>
+            <Styled.ModalTitle>{movie.Title}</Styled.ModalTitle>
+            <Styled.ModalPlot>{movie.Plot}</Styled.ModalPlot>
+          </Styled.ModalDescription>
         </Styled.ModalContent>
       </Styled.Modal>
     );

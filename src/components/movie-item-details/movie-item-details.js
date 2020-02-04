@@ -13,12 +13,13 @@ const MovieItemDetails = props => {
       dispatch({ type: "FETCH_MOVIE", movie: response.data });
     };
     fetchMovieDetails(props.match.params.id);
+    return () => dispatch({ type: "MOVIE_UNMOUNT" });
   }, []);
-  console.log(currentMovie);
   if (!currentMovie) {
-    return <div></div>;
+    return <div>LOADING</div>;
   }
-  return <Modal title={currentMovie.Title} plot={currentMovie.Plot} />;
+  console.log(currentMovie);
+  return <Modal movie={currentMovie} />;
 };
 
 export default MovieItemDetails;

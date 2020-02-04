@@ -13,6 +13,7 @@ export const MovieList = () => {
       return movies.Search.find(a => a.imdbID === id);
     }
   );
+  console.log(filteredMovies);
   return (
     <Styled.MovieList>
       {filteredMovies.map(item => {

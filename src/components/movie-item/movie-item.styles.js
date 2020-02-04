@@ -13,11 +13,13 @@ export const MovieItem = styled(Link)`
 `;
 
 export const MovieItemImg = styled.div`
+  display: block;
   width: 100%;
   height: 80%;
   background-image: ${props => `url(${props.src})`};
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 `;
 
 export const MovieItemTitle = styled.h1`

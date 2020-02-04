@@ -16,7 +16,29 @@ export const ModalContent = styled.div`
   margin: 0 auto;
   color: white;
   z-index: 3;
-  width: 70rem;
-  height: 80rem;
+  width: 90rem;
+  height: 60rem;
   background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+`;
+
+export const ModalImage = styled.img`
+  display: block;
+  height: 100%;
+  width: 70rem;
+`;
+
+export const ModalDescription = styled.div`
+  padding: 2rem;
+  background-color: red;
+  width: 100%;
+  height: 100%;
+`;
+
+export const ModalTitle = styled.h3`
+  font-size: 3rem;
+`;
+
+export const ModalPlot = styled.p`
+  font-size: 1.8rem;
 `;
