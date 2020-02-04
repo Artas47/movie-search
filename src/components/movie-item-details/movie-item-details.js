@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "../modal/modal";
 import { useStateValue } from "../../context/state";
 import Axios from "axios";
 
 const MovieItemDetails = props => {
   const [{ currentMovie }, dispatch] = useStateValue();
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const fetchMovieDetails = async id => {
       const response = await Axios.get(
@@ -15,10 +16,7 @@ const MovieItemDetails = props => {
     fetchMovieDetails(props.match.params.id);
     return () => dispatch({ type: "MOVIE_UNMOUNT" });
   }, []);
-  if (!currentMovie) {
-    return <div>LOADING</div>;
-  }
-  console.log(currentMovie);
+
   return <Modal movie={currentMovie} />;
 };
 

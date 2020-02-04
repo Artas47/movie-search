@@ -8,10 +8,11 @@ const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const onSubmitHandler = async e => {
     e.preventDefault();
+    dispatch({ type: "SEARCH_MOVIES_START" });
     const response = await axios.get(
       `http://www.omdbapi.com/?s="${searchTerm.trim()}"&apikey=c6f9646d`
     );
-    dispatch({ type: "SEARCH_MOVIES", movies: response.data });
+    dispatch({ type: "SEARCH_MOVIES_SUCCESS", movies: response.data });
   };
 
   const onChangeHandler = e => {

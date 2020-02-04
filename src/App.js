@@ -12,15 +12,22 @@ import { StateProvider } from "./context/state";
 function App() {
   const INITIAL_STATE = {
     movies: [],
-    currentMovie: null
+    currentMovie: null,
+    showSpinner: false
   };
 
   const reducer = (state, action) => {
     switch (action.type) {
-      case "SEARCH_MOVIES":
+      case "SEARCH_MOVIES_START":
         return {
           ...state,
-          movies: action.movies
+          showSpinner: true
+        };
+      case "SEARCH_MOVIES_SUCCESS":
+        return {
+          ...state,
+          movies: action.movies,
+          showSpinner: false
         };
       case "FETCH_MOVIE":
         return {
@@ -31,6 +38,11 @@ function App() {
         return {
           ...state,
           currentMovie: null
+        };
+      case "TOGGLE_SPINNER":
+        return {
+          ...state,
+          showSpinner: !state.showSpinner
         };
       default:
         return state;
