@@ -7,8 +7,10 @@ export const MovieItem = props => {
     <Fade in={true}>
       <Styled.MovieItem to={`/movie/${props.id}`}>
         <Styled.MovieItemImg src={props.poster} />
-        <Styled.MovieItemTitle>{props.title}</Styled.MovieItemTitle>
-        <Styled.MovieDescription>{props.description}</Styled.MovieDescription>
+
+        <Styled.MovieItemTitle>
+          {props.title} <br /> ({props.type} {props.year})
+        </Styled.MovieItemTitle>
       </Styled.MovieItem>
     </Fade>
   );

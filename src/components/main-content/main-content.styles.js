@@ -15,4 +15,7 @@ export const MainContent = styled.div`
 export const Text = styled.h3`
   color: #fff;
   text-align: center;
+  font-weight: 400;
+  margin-top: 5rem;
+  font-size: 5rem;
 `;

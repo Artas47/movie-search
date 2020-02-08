@@ -5,7 +5,6 @@ import { useStateValue } from "../../context/state";
 
 export const MainContent = () => {
   const [{ searchTerm, movies }] = useStateValue();
-  console.log("movies", movies);
   const renderMovieList = () => {
     if (searchTerm && !movies) {
       return <Styled.Text>Movies not found...</Styled.Text>;

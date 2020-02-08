@@ -4,6 +4,7 @@ import * as Styled from "./modal.styles";
 import { Spinner } from "../spinner/spinner";
 import { useHistory } from "react-router-dom";
 import Fade from "../fade-animation/fade";
+import RatingBox from "../rating-box/rating-box";
 
 const Modal = ({ movie }) => {
   let history = useHistory();
@@ -42,6 +43,7 @@ const Modal = ({ movie }) => {
               {movie.Country}
               <br /> */}
                 <Styled.ModalPlot>{movie.Plot}</Styled.ModalPlot>
+                <RatingBox />
               </Styled.ModalDescription>
               <Styled.ModalCancel onClick={() => history.goBack()} />
             </Styled.ModalContent>

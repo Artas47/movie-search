@@ -22,7 +22,8 @@ export const MovieList = () => {
             id={item.imdbID}
             poster={item.Poster}
             title={item.Title}
-            description={item.Description}
+            year={item.Year}
+            type={item.Type}
           />
         );
       })}
