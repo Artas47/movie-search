@@ -13,7 +13,8 @@ function App() {
   const INITIAL_STATE = {
     movies: [],
     currentMovie: null,
-    isLoading: false
+    isLoading: false,
+    searchTerm: ""
   };
 
   const reducer = (state, action) => {
@@ -43,6 +44,11 @@ function App() {
         return {
           ...state,
           isLoading: !state.isLoading
+        };
+      case "SEARCH_TERM_CHANGE":
+        return {
+          ...state,
+          searchTerm: action.searchTerm
         };
       default:
         return state;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ReactComponent as Cancel } from "../../assets/cross.svg";
 
 export const Modal = styled.div`
   width: 80%;
@@ -21,6 +22,7 @@ export const ModalContent = styled.div`
   height: 60rem;
   background-color: rgba(0, 0, 0, 0.95);
   display: flex;
+  position: relative;
 `;
 
 export const ModalImage = styled.img`
@@ -58,4 +60,15 @@ export const ModalDetailsItem = styled.p`
   :not(:last-child) {
     margin-right: 4rem;
   }
+`;
+
+export const ModalCancel = styled(Cancel)`
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 999;
+  cursor: pointer;
+  fill: #fff;
 `;
