@@ -13,7 +13,7 @@ function App() {
   const INITIAL_STATE = {
     movies: [],
     currentMovie: null,
-    showSpinner: false
+    isLoading: false
   };
 
   const reducer = (state, action) => {
@@ -21,13 +21,13 @@ function App() {
       case "SEARCH_MOVIES_START":
         return {
           ...state,
-          showSpinner: true
+          isLoading: true
         };
       case "SEARCH_MOVIES_SUCCESS":
         return {
           ...state,
           movies: action.movies,
-          showSpinner: false
+          isLoading: false
         };
       case "FETCH_MOVIE":
         return {
@@ -42,7 +42,7 @@ function App() {
       case "TOGGLE_SPINNER":
         return {
           ...state,
-          showSpinner: !state.showSpinner
+          isLoading: !state.isLoading
         };
       default:
         return state;

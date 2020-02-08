@@ -5,18 +5,14 @@ import { Spinner } from "../spinner/spinner";
 import { useStateValue } from "../../context/state";
 
 export const MovieList = () => {
-  const [{ movies, showSpinner }, dispatch] = useStateValue();
-  console.log(showSpinner);
-  if (!movies.Search) {
-    return <div></div>;
-  } else if (showSpinner) {
+  const [{ movies, isLoading }, dispatch] = useStateValue();
+  //filtering movies to eliminate duplicates
+  let filteredMovies = [...new Set(movies.map(item => item.imdbID))].map(id => {
+    return movies.find(a => a.imdbID === id);
+  });
+  if (isLoading) {
     return <Spinner />;
   }
-  let filteredMovies = [...new Set(movies.Search.map(item => item.imdbID))].map(
-    id => {
-      return movies.Search.find(a => a.imdbID === id);
-    }
-  );
   return (
     <Styled.MovieList>
       {filteredMovies.map(item => {

@@ -12,7 +12,7 @@ const SearchBar = () => {
     const response = await axios.get(
       `http://www.omdbapi.com/?s="${searchTerm.trim()}"&apikey=c6f9646d`
     );
-    dispatch({ type: "SEARCH_MOVIES_SUCCESS", movies: response.data });
+    dispatch({ type: "SEARCH_MOVIES_SUCCESS", movies: response.data.Search });
   };
 
   const onChangeHandler = e => {
