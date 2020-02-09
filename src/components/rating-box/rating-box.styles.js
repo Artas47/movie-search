@@ -31,3 +31,6 @@ export const RatingVotes = styled.span`
   margin-top: 0.5rem;
   font-size: 1.5rem;
 `;
+export const RatingVotesText = styled.span`
+  font-size: 1.2rem;
+`;

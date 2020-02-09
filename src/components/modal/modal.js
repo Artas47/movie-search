@@ -54,7 +54,6 @@ const Modal = ({ movie }) => {
       </Styled.Modal>
     );
   };
-  console.log("movie", movie);
   return ReactDOM.createPortal(
     renderModalContent(),
     document.getElementById("modal")

@@ -5,6 +5,9 @@ export const SideBar = styled.div`
   top: 0;
   right: 0;
   height: 100%;
-  min-width: 20%;
+  width: 20%;
   background-color: rgb(0, 0, 0, 0.8);
+  color: #fff;
+  display: flex;
+  word-wrap: break-word;
 `;

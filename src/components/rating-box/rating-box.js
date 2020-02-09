@@ -8,6 +8,9 @@ const RatingBox = () => {
       currentMovie: { imdbRating, imdbVotes }
     }
   ] = useStateValue();
+  if (imdbRating === "N/A") {
+    return <div></div>;
+  }
   return (
     <Styled.RatingBoxOuter>
       <Styled.RatingText>Imdb Rating</Styled.RatingText>
@@ -18,6 +21,7 @@ const RatingBox = () => {
         </Styled.RatingNumber>
       </Styled.RatingBoxInner>
       <Styled.RatingVotes>{imdbVotes}</Styled.RatingVotes>
+      <Styled.RatingVotesText>votes</Styled.RatingVotesText>
     </Styled.RatingBoxOuter>
   );
 };

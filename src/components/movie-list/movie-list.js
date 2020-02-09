@@ -13,6 +13,7 @@ export const MovieList = () => {
   if (isLoading) {
     return <Spinner />;
   }
+
   return (
     <Styled.MovieList>
       {filteredMovies.map(item => {
@@ -24,6 +25,7 @@ export const MovieList = () => {
             title={item.Title}
             year={item.Year}
             type={item.Type}
+            movie={item}
           />
         );
       })}

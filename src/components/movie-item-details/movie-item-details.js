@@ -5,7 +5,6 @@ import Axios from "axios";
 
 const MovieItemDetails = props => {
   const [{ currentMovie }, dispatch] = useStateValue();
-  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const fetchMovieDetails = async id => {
       const response = await Axios.get(

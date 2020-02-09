@@ -20,3 +20,7 @@
   transform: translateY(0) scale(1);
   transition: all 0.5s;
 }
+
+.fade-appear-exiting {
+  transform: scale(0.5);
+}

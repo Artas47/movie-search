@@ -14,7 +14,8 @@ function App() {
     movies: [],
     currentMovie: null,
     isLoading: false,
-    searchTerm: ""
+    searchTerm: "",
+    favMovies: []
   };
 
   const reducer = (state, action) => {
@@ -49,6 +50,18 @@ function App() {
         return {
           ...state,
           searchTerm: action.searchTerm
+        };
+      case "ADD_FAV_MOVIE":
+        return {
+          ...state,
+          favMovies: [...state.favMovies, action.movie]
+        };
+      case "REMOVE_FAV_MOVIE":
+        return {
+          ...state,
+          favMovies: state.favMovies.filter(
+            item => item.imdbID !== action.movie.imdbID
+          )
         };
       default:
         return state;
