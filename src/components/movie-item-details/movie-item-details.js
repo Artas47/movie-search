@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Modal from "../modal/modal";
 import { useStateValue } from "../../context/state";
 import Axios from "axios";
@@ -14,7 +14,7 @@ const MovieItemDetails = props => {
     };
     fetchMovieDetails(props.match.params.id);
     return () => dispatch({ type: "MOVIE_UNMOUNT" });
-  }, []);
+  }, [props.match.params.id]);
 
   return <Modal movie={currentMovie} />;
 };

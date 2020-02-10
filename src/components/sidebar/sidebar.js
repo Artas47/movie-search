@@ -1,6 +1,7 @@
 import React from "react";
 import * as Styled from "./sidebar.styles";
 import { useStateValue } from "../../context/state";
+import SidebarItem from "../sidebar-item/sidebar-item";
 
 const SideBar = () => {
   const [{ favMovies }] = useStateValue();
@@ -8,7 +9,7 @@ const SideBar = () => {
     <Styled.SideBar>
       <div style={{ display: "flex", flexDirection: "column" }}>
         {favMovies.map(item => (
-          <p> {item.Title} </p>
+          <SidebarItem movie={item} />
         ))}
       </div>
     </Styled.SideBar>

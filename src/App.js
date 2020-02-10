@@ -73,8 +73,8 @@ function App() {
       <Styled.App backgroundImg={BackgroundImg}>
         <GlobalStyles />
         <Header />
-        <SideBar />
         <BrowserRouter>
+          <SideBar />
           <Route path="/" component={MainContent} />
           <Route path="/movie/:id" component={MovieItemDetails} />
         </BrowserRouter>

@@ -45,7 +45,7 @@ const Modal = ({ movie }) => {
                 <Styled.ModalPlot>{movie.Plot}</Styled.ModalPlot>
                 <RatingBox />
               </Styled.ModalDescription>
-              <Styled.ModalCancel onClick={() => history.goBack()} />
+              <Styled.ModalCancel onClick={() => history.push("/")} />
             </Styled.ModalContent>
           </Fade>
         ) : (
