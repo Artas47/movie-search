@@ -5,12 +5,20 @@ export const SideBar = styled.div`
   top: 0;
   right: 0;
   height: 100vh;
-  width: 20%;
+  min-width: 40rem;
   background-color: rgb(0, 0, 0, 0.8);
   color: #fff;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   word-wrap: break-word;
   overflow-y: scroll;
   border-left: 1px solid #fff;
+
+  @media only screen and (max-width: 1200px) {
+    min-width: 30rem;
+  }
+  @media only screen and (max-width: 650px) {
+    display: none;
+  }
 `;

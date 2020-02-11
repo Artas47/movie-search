@@ -9,10 +9,14 @@ export const MovieItem = styled(Link)`
   box-shadow: 0 1rem 2rem rgb(0, 0, 0, 0.9);
   color: white;
   margin: 0 3rem;
+
   margin-bottom: 4rem;
   text-decoration: none;
   border: 2px solid #787878;
   position: relative;
+  @media only screen and (max-width: 1500px) {
+    flex-grow: 0.3;
+  }
 `;
 
 export const MovieItemImg = styled.div`

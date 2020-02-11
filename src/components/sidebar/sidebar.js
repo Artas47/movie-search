@@ -7,11 +7,9 @@ const SideBar = () => {
   const [{ favMovies }] = useStateValue();
   return (
     <Styled.SideBar>
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        {favMovies.map(item => (
-          <SidebarItem movie={item} />
-        ))}
-      </div>
+      {favMovies.map(item => (
+        <SidebarItem movie={item} />
+      ))}
     </Styled.SideBar>
   );
 };

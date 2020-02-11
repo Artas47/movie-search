@@ -2,6 +2,7 @@ import React from "react";
 import * as Styled from "./main-content.styles";
 import MovieList from "../movie-list/movie-list";
 import { useStateValue } from "../../context/state";
+import Sidebar from "../sidebar/sidebar";
 
 export const MainContent = () => {
   const [{ searchTerm, movies }] = useStateValue();

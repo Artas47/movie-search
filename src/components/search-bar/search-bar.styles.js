@@ -30,6 +30,10 @@ export const Input = styled.input`
     width: 100px;
     color: white;
   }
+  /* margin-right: 40rem;
+  @media only screen and (max-width: 1200px) {
+    margin-right: 30rem;
+  } */
 `;
 
 export const Form = styled.form``;
