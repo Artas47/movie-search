@@ -2,19 +2,22 @@ import styled from "styled-components";
 import { ReactComponent as Cancel } from "../../assets/cross.svg";
 
 export const Modal = styled.div`
-  width: 80%;
+  width: 100%;
   position: absolute;
+  background-color: blue;
   top: 0;
   left: 0;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.9);
-  z-index: 999;
+  z-index: 6;
   display: flex;
   align-items: center;
 `;
 
 export const ModalContent = styled.div`
-  margin: 0 auto;
+  position: absolute;
+  top: 20%;
+  left: 10%;
   margin-top: 3rem;
   color: white;
   z-index: 3;
@@ -22,7 +25,7 @@ export const ModalContent = styled.div`
   height: 60rem;
   background-color: rgba(0, 0, 0, 0.95);
   display: flex;
-  position: relative;
+  margin: 0 auto;
 `;
 
 export const ModalImage = styled.img`

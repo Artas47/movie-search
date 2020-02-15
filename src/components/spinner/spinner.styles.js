@@ -4,10 +4,17 @@ export const SpinnerOverlay = styled.div`
   position: relative;
   z-index: 999;
   height: 60vh;
-  width: 80vw;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 40rem;
+  @media only screen and (max-width: 1200px) {
+    margin-right: 30rem;
+  }
+  @media only screen and (max-width: 650px) {
+    margin-right: 0;
+  }
 `;
 
 export const SpinnerContainer = styled.div`
@@ -21,13 +28,7 @@ export const SpinnerContainer = styled.div`
   border-top-color: #636767;
   animation: spin 1s ease-in-out infinite;
   -webkit-animation: spin 1s ease-in-out infinite;
-  margin-right: 40rem;
-  @media only screen and (max-width: 1200px) {
-    margin-right: 30rem;
-  }
-  @media only screen and (max-width: 650px) {
-    margin-right: 0;
-  }
+
   @keyframes spin {
     to {
       -webkit-transform: rotate(360deg);

@@ -49,7 +49,7 @@ const Modal = ({ movie }) => {
             </Styled.ModalContent>
           </Fade>
         ) : (
-          <Spinner style={{ width: "100vw" }} />
+          <Spinner />
         )}
       </Styled.Modal>
     );

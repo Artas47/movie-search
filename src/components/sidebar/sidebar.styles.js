@@ -6,6 +6,7 @@ export const SideBar = styled.div`
   right: 0;
   height: 100vh;
   min-width: 40rem;
+  z-index: 7;
   background-color: rgb(0, 0, 0, 0.8);
   color: #fff;
   display: flex;
