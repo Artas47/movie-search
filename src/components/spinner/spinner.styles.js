@@ -4,17 +4,17 @@ export const SpinnerOverlay = styled.div`
   position: relative;
   z-index: 999;
   height: 60vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 40rem;
+  /* margin-right: 40rem;
   @media only screen and (max-width: 1200px) {
     margin-right: 30rem;
   }
   @media only screen and (max-width: 650px) {
     margin-right: 0;
-  }
+  } */
 `;
 
 export const SpinnerContainer = styled.div`

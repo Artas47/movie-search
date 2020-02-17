@@ -15,7 +15,8 @@ function App() {
     currentMovie: null,
     isLoading: false,
     searchTerm: "",
-    favMovies: []
+    favMovies: [],
+    showSidebar: true
   };
 
   const reducer = (state, action) => {
@@ -62,6 +63,11 @@ function App() {
           favMovies: state.favMovies.filter(
             item => item.imdbID !== action.movie.imdbID
           )
+        };
+      case "TOGGLE_SIDEBAR":
+        return {
+          ...state,
+          showSidebar: !state.showSidebar
         };
       default:
         return state;

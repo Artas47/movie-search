@@ -5,7 +5,7 @@ export const SideBar = styled.div`
   top: 0;
   right: 0;
   height: 100vh;
-  min-width: 40rem;
+  width: 20%;
   z-index: 7;
   background-color: rgb(0, 0, 0, 0.8);
   color: #fff;
@@ -15,11 +15,7 @@ export const SideBar = styled.div`
   word-wrap: break-word;
   overflow-y: scroll;
   border-left: 1px solid #fff;
-
-  @media only screen and (max-width: 1200px) {
-    min-width: 30rem;
-  }
-  @media only screen and (max-width: 650px) {
-    display: none;
+  @media only screen and (max-width: 1000px) {
+    width: 30%;
   }
 `;

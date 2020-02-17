@@ -7,7 +7,7 @@ export const Input = styled.input`
   font-size: 3rem;
   padding: 0.1rem;
   color: #cbd0d6;
-  width: 53rem;
+  width: 44rem;
   height: 5rem;
   text-decoration: none;
   display: flex;
@@ -21,7 +21,6 @@ export const Input = styled.input`
 
   :focus {
     outline: none;
-    width: 56rem;
     border-bottom: 1px solid #438bf0;
   }
   :after {
@@ -30,10 +29,13 @@ export const Input = styled.input`
     width: 100px;
     color: white;
   }
-  /* margin-right: 40rem;
-  @media only screen and (max-width: 1200px) {
-    margin-right: 30rem;
-  } */
+
+  @media only screen and (max-width: 550px) {
+    width: 80%;
+  }
 `;
 
-export const Form = styled.form``;
+export const Form = styled.form`
+  display: flex;
+  justify-content: center;
+`;

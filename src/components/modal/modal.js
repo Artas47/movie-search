@@ -5,16 +5,21 @@ import { Spinner } from "../spinner/spinner";
 import { useHistory } from "react-router-dom";
 import Fade from "../fade-animation/fade";
 import RatingBox from "../rating-box/rating-box";
+import { useStateValue } from "../../context/state";
 
 const Modal = ({ movie }) => {
   let history = useHistory();
+  const [{ showSidebar }] = useStateValue();
   const renderModalContent = () => {
     return (
-      <Styled.Modal onClick={() => history.push("/")}>
+      <Styled.Modal onClick={() => history.push("/")} showSidebar={showSidebar}>
         {movie ? (
           <Fade in={true}>
-            <Styled.ModalContent onClick={e => e.stopPropagation()}>
-              <Styled.ModalImage src={movie.Poster} />
+            <Styled.ModalContent
+              onClick={e => e.stopPropagation()}
+              showSidebar={showSidebar}
+            >
+              <Styled.ModalImage src={movie.Poster} showSidebar={showSidebar} />
               <Styled.ModalDescription>
                 <Styled.ModalTitle>
                   {movie.Title.toUpperCase()}
@@ -30,22 +35,10 @@ const Modal = ({ movie }) => {
                     {movie.Genre}
                   </Styled.ModalDetailsItem>
                 </Styled.ModalDetails>
-                {/* {movie.Type}
-              {movie.totalSeasons}
-              <br />
-              {movie.imdbRating}
-              <br />
-              {movie.imdbVotes}
-              <br />
-              <br />
-              {movie.Writer}
-              <br />
-              {movie.Country}
-              <br /> */}
                 <Styled.ModalPlot>{movie.Plot}</Styled.ModalPlot>
                 <RatingBox />
+                <Styled.ModalCancel onClick={() => history.push("/")} />
               </Styled.ModalDescription>
-              <Styled.ModalCancel onClick={() => history.push("/")} />
             </Styled.ModalContent>
           </Fade>
         ) : (

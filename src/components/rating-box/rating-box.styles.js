@@ -6,6 +6,18 @@ export const RatingBoxOuter = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 1000px) {
+    margin-top: 2rem;
+  }
+  @media only screen and (max-width: 800px) {
+    margin-top: 2.5rem;
+  }
+  @media only screen and (max-width: 600px) {
+    margin-top: 1rem;
+  }
+  @media only screen and (max-width: 400px) {
+    margin-top: 0.5rem;
+  }
 `;
 
 export const RatingBoxInner = styled.div`
@@ -20,9 +32,21 @@ export const RatingBoxInner = styled.div`
 export const RatingText = styled.span`
   font-size: 1.7rem;
   margin-bottom: 0.5rem;
+  @media only screen and (max-width: 800px) {
+    font-size: 1.5rem;
+  }
+  @media only screen and (max-width: 600px) {
+    font-size: 1.3rem;
+  }
 `;
 export const RatingNumber = styled.span`
   font-size: 2.3rem;
+  @media only screen and (max-width: 800px) {
+    font-size: 2.1rem;
+  }
+  @media only screen and (max-width: 600px) {
+    font-size: 1.9rem;
+  }
 `;
 export const RatingNumberSmall = styled.span`
   font-size: 1.5rem;

@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { useStateValue } from "../../context/state";
 
 export const MovieList = styled.div`
   width: 100%;
@@ -6,11 +7,4 @@ export const MovieList = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-right: 40rem;
-  @media only screen and (max-width: 1200px) {
-    margin-right: 30rem;
-  }
-  @media only screen and (max-width: 650px) {
-    margin-right: 0;
-  }
 `;

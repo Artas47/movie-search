@@ -4,7 +4,10 @@ import { useStateValue } from "../../context/state";
 import SidebarItem from "../sidebar-item/sidebar-item";
 
 const SideBar = () => {
-  const [{ favMovies }] = useStateValue();
+  const [{ favMovies, showSidebar }] = useStateValue();
+  if (!showSidebar) {
+    return <div></div>;
+  }
   return (
     <Styled.SideBar>
       {favMovies.map(item => (

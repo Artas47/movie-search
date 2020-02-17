@@ -13,6 +13,13 @@ export const SidebarItem = styled.div`
   @media only screen and (max-width: 1400px) {
     height: 13rem;
   }
+  @media only screen and (max-width: 550px) {
+    height: 11rem;
+    width: 95%;
+  }
+  @media only screen and (max-width: 400px) {
+    height: 9rem;
+  }
 `;
 
 export const SidebarItemImage = styled.img`
@@ -20,6 +27,12 @@ export const SidebarItemImage = styled.img`
   min-width: 10rem;
   @media only screen and (max-width: 1400px) {
     min-width: 8rem;
+  }
+  @media only screen and (max-width: 550px) {
+    min-width: 6rem;
+  }
+  @media only screen and (max-width: 400px) {
+    min-width: 5rem;
   }
 `;
 
