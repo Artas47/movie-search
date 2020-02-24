@@ -27,7 +27,12 @@ export const ModalContent = styled.div`
   height: 60rem;
   background-color: rgba(0, 0, 0, 0.95);
   display: flex;
+  overflow-y: scroll;
 
+  ::-webkit-scrollbar {
+    width: 0px; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+  }
   @media only screen and (max-width: 1200px) {
     width: 85rem;
     margin-top: 0;
@@ -40,11 +45,11 @@ export const ModalContent = styled.div`
         flex-direction: column;
         justify-content: center;
         width: 55rem;
-        height: 45rem;
+        height: 60%;
       }
       @media only screen and (max-width: 450px) {
         width: 45rem;
-        height: 50rem;
+        height: 75%;
       }
       @media only screen and (max-width: 350px) {
         width: 35rem;
@@ -58,12 +63,11 @@ export const ModalContent = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 60rem;
-        height: 45rem;
+        width: 55rem;
+        height: 80%;
       }
       @media only screen and (max-width: 700px) {
         width: 45rem;
-        height: 43rem;
       }
     `}
 `;
@@ -73,21 +77,22 @@ export const ModalImage = styled.img`
   align-self: flex-end;
   height: 107%;
   width: 100%;
+
   ${props =>
     props.showSidebar &&
     css`
       @media only screen and (max-width: 1000px) {
-        height: 70%;
+        height: 100%;
       }
       @media only screen and (max-width: 700px) {
-        height: 60%;
+        height: 50%;
       }
     `}
   ${props =>
     !props.showSidebar &&
     css`
       @media only screen and (max-width: 650px) {
-        height: 80%;
+        height: 65%;
       }
       @media only screen and (max-width: 450px) {
         height: 60%;
@@ -96,6 +101,9 @@ export const ModalImage = styled.img`
         height: 100%;
       } */
     `}
+    @media only screen and (max-height: 500px) {
+    height: 30rem;
+  }
 `;
 
 export const ModalDescription = styled.div`
@@ -104,8 +112,21 @@ export const ModalDescription = styled.div`
   background-color: #575757;
   width: 100%;
   height: 100%;
+  /* @media only screen and (max-width: 1000px) {
+    height: 60%;
+  } */
+
   @media only screen and (max-width: 800px) {
     padding: 2rem;
+  }
+  @media only screen and (max-width: 600px) {
+    padding: 1.5rem;
+  }
+  @media only screen and (max-width: 400px) {
+    padding: 1rem;
+  }
+  @media only screen and (max-height: 500px) {
+    height: 100%;
   }
 `;
 

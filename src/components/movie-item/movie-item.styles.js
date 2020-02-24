@@ -56,5 +56,6 @@ export const MovieStar = styled(Star)`
   right: 50%;
   transform: translate(50%, 45%);
   z-index: 5;
+  transition: all 0.2s;
   fill: ${props => (props.isFav ? "gold" : "grey")};
 `;

@@ -6,7 +6,7 @@ import { useStateValue } from "../../context/state";
 export const Header = () => {
   const [state, dispatch] = useStateValue();
   return (
-    <Styled.Header>
+    <Styled.Header showSidebar={state.showSidebar}>
       <SearchBar />
       {state.showSidebar ? (
         <Styled.InSVG onClick={() => dispatch({ type: "TOGGLE_SIDEBAR" })} />

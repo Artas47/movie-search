@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SideBar = styled.div`
+export const Sidebar = styled.div`
   position: fixed;
   top: 0;
   right: 0;
@@ -18,4 +18,11 @@ export const SideBar = styled.div`
   @media only screen and (max-width: 1000px) {
     width: 30%;
   }
+`;
+
+export const SidebarEmptyText = styled.p`
+  text-align: center;
+  color: #ccc;
+  font-size: 2rem;
+  margin-top: 2rem;
 `;

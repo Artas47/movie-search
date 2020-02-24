@@ -9,11 +9,14 @@ const SideBar = () => {
     return <div></div>;
   }
   return (
-    <Styled.SideBar>
+    <Styled.Sidebar>
+      <Styled.SidebarEmptyText>
+        {!favMovies.length ? "Favorite movies list is empty" : ""}
+      </Styled.SidebarEmptyText>
       {favMovies.map(item => (
         <SidebarItem movie={item} />
       ))}
-    </Styled.SideBar>
+    </Styled.Sidebar>
   );
 };
 

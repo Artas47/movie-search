@@ -4,7 +4,7 @@ import { ReactComponent as Out } from "../../assets/out.svg";
 
 export const Header = styled.header`
   display: flex;
-  width: 80%;
+  width: ${({ showSidebar }) => (showSidebar ? "80%" : "100%")};
   justify-content: center;
   align-items: center;
   height: 3rem;
@@ -23,6 +23,7 @@ export const InSVG = styled(In)`
   fill: #fff;
   min-width: 3rem;
   height: 3rem;
+  z-index: 999;
   cursor: pointer;
   @media only screen and (max-width: 1000px) {
     right: 31%;
@@ -31,6 +32,7 @@ export const InSVG = styled(In)`
 
 export const OutSVG = styled(Out)`
   position: absolute;
+  z-index: 999;
   top: 1rem;
   right: 1rem;
   fill: #fff;
