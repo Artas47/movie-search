@@ -1,5 +1,4 @@
-import styled, { css } from "styled-components";
-import { useStateValue } from "../../context/state";
+import styled from "styled-components";
 
 export const MovieList = styled.div`
   width: 100%;

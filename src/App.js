@@ -15,8 +15,8 @@ function App() {
     currentMovie: null,
     isLoading: false,
     searchTerm: "",
-    favMovies: [],
-    showSidebar: true
+    favMovies: JSON.parse(localStorage.getItem("favMovies")) || [],
+    showSidebar: localStorage.getItem("showSidebar") === "true" ? true : false
   };
 
   const reducer = (state, action) => {
@@ -64,10 +64,15 @@ function App() {
             item => item.imdbID !== action.movie.imdbID
           )
         };
+      case "ADD_FAV_MOVIES_LS":
+        return {
+          ...state,
+          favMovies: action.moviesLs
+        };
       case "TOGGLE_SIDEBAR":
         return {
           ...state,
-          showSidebar: !state.showSidebar
+          showSidebar: action.showSidebar === "true" ? true : false
         };
       default:
         return state;

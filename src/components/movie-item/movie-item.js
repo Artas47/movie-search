@@ -26,8 +26,16 @@ export const MovieItem = props => {
           onClick={() => {
             if (isFav(props.movie)) {
               dispatch({ type: "REMOVE_FAV_MOVIE", movie: props.movie });
+              // localStorage.setItem(
+              //   "favMovies",
+              //   JSON.stringify(state.favMovies)
+              // );
             } else {
               dispatch({ type: "ADD_FAV_MOVIE", movie: props.movie });
+              // localStorage.setItem(
+              //   "favMovies",
+              //   JSON.stringify(state.favMovies)
+              // );
             }
           }}
           isFav={isFav(props.movie)}
