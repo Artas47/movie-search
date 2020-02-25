@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import backgroundImg from "./assets/background.jpg";
 
 export const App = styled.main`
   width: 100vw;
@@ -10,7 +11,7 @@ export const App = styled.main`
       rgb(0, 0, 0, 0.8),
       rgb(0, 0, 0, 0.8)
     ),
-    url(${props => (props.backgroundImg ? props.backgroundImg : "")});
+    url(${backgroundImg});
   background-position: center;
   overflow-y: hidden;
   margin-right: auto;

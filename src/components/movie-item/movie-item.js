@@ -38,7 +38,7 @@ export const MovieItem = props => {
               // );
             }
           }}
-          isFav={isFav(props.movie)}
+          isfav={isFav(props.movie)}
         />
       </Styled.MovieItem>
     </Fade>

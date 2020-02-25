@@ -11,8 +11,9 @@ export const Header = styled.header`
   border-bottom: 1px solid rgb(0, 0, 0, 0.1);
   font-size: 3rem;
   padding: 7rem 0;
+  /* background-color: rgba(0, 0, 0, 0.9); */
   @media only screen and (max-width: 1000px) {
-    width: 70%;
+    width: ${({ showSidebar }) => (showSidebar ? "70%" : "100%")};
   }
 `;
 

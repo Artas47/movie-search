@@ -8,9 +8,9 @@ export const MovieItem = styled(Link)`
   background-color: rgb(0, 0, 0, 0.8);
   box-shadow: 0 1rem 2rem rgb(0, 0, 0, 0.9);
   color: white;
-  margin: 0 3rem;
+  margin: 0 2rem;
 
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   text-decoration: none;
   border: 2px solid #787878;
   position: relative;
@@ -57,5 +57,5 @@ export const MovieStar = styled(Star)`
   transform: translate(50%, 45%);
   z-index: 5;
   transition: all 0.2s;
-  fill: ${props => (props.isFav ? "gold" : "grey")};
+  fill: ${props => (props.isfav ? "gold" : "grey")};
 `;
