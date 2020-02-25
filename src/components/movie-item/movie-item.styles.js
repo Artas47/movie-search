@@ -1,7 +1,35 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
-import { ReactComponent as Star } from "../../assets/star-full.svg";
 
+export const MovieButtonContainer = styled.div`
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: all 0.2s;
+`;
+export const MovieItemImg = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 70%;
+  z-index: 3;
+  background-color: black;
+  ${({ src }) =>
+    src &&
+    css`
+      background-image: ${props => `url(${props.src})`};
+      background-size: cover;
+      background-position: center;
+    `}
+
+  overflow: hidden;
+  transition: all 0.2s;
+`;
 export const MovieItem = styled(Link)`
   width: 30rem;
   height: 43rem;
@@ -17,23 +45,21 @@ export const MovieItem = styled(Link)`
   @media only screen and (max-width: 1500px) {
     flex-grow: 0.3;
   }
-`;
-
-export const MovieItemImg = styled.div`
-  display: block;
-  width: 100%;
-  height: 70%;
-  z-index: 3;
-  background-image: ${props => `url(${props.src})`};
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  cursor: pointer;
+  :hover ${MovieButtonContainer} {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  :hover ${MovieItemImg} {
+    filter: brightness(0.2);
+  }
 `;
 
 export const MovieItemDescBox = styled.div`
   width: 100%;
   height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: default;
 `;
 
@@ -44,18 +70,28 @@ export const MovieItemTitle = styled.h1`
   align-items: center;
   text-align: center;
   font-size: 1.9rem;
-  width: 100%;
+  width: 90%;
   height: 80%;
 `;
 
-export const MovieStar = styled(Star)`
-  position: absolute;
-  width: 5rem;
-  height: 5rem;
-  bottom: 0;
-  right: 50%;
-  transform: translate(50%, 45%);
-  z-index: 5;
+export const MovieButton = styled.button`
+  width: 12.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 4rem;
+  border: 1px solid white;
+  background-color: transparent;
+  color: #fff;
   transition: all 0.2s;
-  fill: ${props => (props.isfav ? "gold" : "grey")};
+  font-size: 1.5rem;
+  cursor: pointer;
+  outline: none;
+  :hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  :not(:last-child) {
+    margin-bottom: 2rem;
+  }
 `;

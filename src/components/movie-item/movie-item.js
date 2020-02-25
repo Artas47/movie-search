@@ -13,16 +13,33 @@ export const MovieItem = props => {
   return (
     <Fade in={true}>
       <Styled.MovieItem>
-        <Styled.MovieItemImg
-          onClick={() => history.push(`/movie/${props.id}`)}
-          src={props.poster}
-        />
+        <Styled.MovieItemImg src={props.poster}>
+          {props.poster === "N/A" ? "Image not found" : ""}
+        </Styled.MovieItemImg>
+        <Styled.MovieButtonContainer>
+          <Styled.MovieButton
+            onClick={() => {
+              if (isFav(props.movie)) {
+                dispatch({ type: "REMOVE_FAV_MOVIE", movie: props.movie });
+              } else {
+                dispatch({ type: "ADD_FAV_MOVIE", movie: props.movie });
+              }
+            }}
+          >
+            {isFav(props.movie) ? " Remove from favorites" : "Add to favorites"}
+          </Styled.MovieButton>
+          <Styled.MovieButton
+            onClick={() => history.push(`/movie/${props.id}`)}
+          >
+            Details
+          </Styled.MovieButton>
+        </Styled.MovieButtonContainer>
         <Styled.MovieItemDescBox>
           <Styled.MovieItemTitle>
             {props.title} <br /> ({props.type} {props.year})
           </Styled.MovieItemTitle>
         </Styled.MovieItemDescBox>
-        <Styled.MovieStar
+        {/* <Styled.MovieStar
           onClick={() => {
             if (isFav(props.movie)) {
               dispatch({ type: "REMOVE_FAV_MOVIE", movie: props.movie });
@@ -39,7 +56,7 @@ export const MovieItem = props => {
             }
           }}
           isfav={isFav(props.movie)}
-        />
+        /> */}
       </Styled.MovieItem>
     </Fade>
   );

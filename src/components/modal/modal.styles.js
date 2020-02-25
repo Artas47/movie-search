@@ -27,7 +27,6 @@ export const ModalContent = styled.div`
   height: 60rem;
   background-color: rgba(0, 0, 0, 0.95);
   display: flex;
-  overflow-y: scroll;
 
   ::-webkit-scrollbar {
     width: 0px; /* Remove scrollbar space */
@@ -73,7 +72,7 @@ export const ModalContent = styled.div`
 `;
 
 export const ModalImage = styled.img`
-  display: block;
+  display: ${props => (props.src === "N/A" ? "none" : "block")};
   align-self: flex-end;
   height: 107%;
   width: 100%;
