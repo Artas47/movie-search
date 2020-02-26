@@ -3,30 +3,36 @@ import { ReactComponent as Cancel } from "../../assets/cross.svg";
 
 export const SidebarItem = styled.div`
   width: 90%;
-  min-height: 15rem;
+  height: 15rem;
   border: 1px solid #2f3540;
   display: flex;
   align-items: center;
   cursor: pointer;
   position: relative;
-  margin: 1rem 0;
+
   border-radius: 1rem;
-  overflow: hidden;
+
+  :not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
   @media only screen and (max-width: 1400px) {
-    min-height: 13rem;
+    height: 13rem;
   }
   @media only screen and (max-width: 550px) {
-    min-height: 11rem;
+    height: 11rem;
     width: 95%;
   }
   @media only screen and (max-width: 400px) {
-    min-height: 9rem;
+    height: 9rem;
   }
 `;
 
 export const SidebarItemImage = styled.img`
   height: 100%;
   min-width: 10rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
   @media only screen and (max-width: 1400px) {
     min-width: 8rem;
   }
@@ -54,4 +60,10 @@ export const SidebarItemCancel = styled(Cancel)`
   width: 1.4rem;
   height: 1.4rem;
   fill: #fff;
+  @media only screen and (max-width: 400px) {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+  }
 `;
