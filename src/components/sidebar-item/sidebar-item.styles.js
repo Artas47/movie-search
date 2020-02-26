@@ -3,22 +3,24 @@ import { ReactComponent as Cancel } from "../../assets/cross.svg";
 
 export const SidebarItem = styled.div`
   width: 90%;
-  height: 15rem;
-  border: 1px solid white;
+  min-height: 15rem;
+  border: 1px solid #2f3540;
   display: flex;
   align-items: center;
   cursor: pointer;
   position: relative;
   margin: 1rem 0;
+  border-radius: 1rem;
+  overflow: hidden;
   @media only screen and (max-width: 1400px) {
-    height: 13rem;
+    min-height: 13rem;
   }
   @media only screen and (max-width: 550px) {
-    height: 11rem;
+    min-height: 11rem;
     width: 95%;
   }
   @media only screen and (max-width: 400px) {
-    height: 9rem;
+    min-height: 9rem;
   }
 `;
 

@@ -24,7 +24,7 @@ export const MovieItemImg = styled.div`
     css`
       background-image: ${props => `url(${props.src})`};
       background-size: cover;
-      background-position: center;
+      background-position: top;
     `}
 
   overflow: hidden;
@@ -37,11 +37,13 @@ export const MovieItem = styled(Link)`
   box-shadow: 0 1rem 2rem rgb(0, 0, 0, 0.9);
   color: white;
   margin: 0 2rem;
-
   margin-bottom: 3rem;
   text-decoration: none;
-  border: 2px solid #787878;
+  border: 2px solid #2f3540;
   position: relative;
+  cursor: default;
+  border-radius: 1rem;
+  overflow: hidden;
   @media only screen and (max-width: 1500px) {
     flex-grow: 0.3;
   }
@@ -70,6 +72,7 @@ export const MovieItemTitle = styled.h1`
   align-items: center;
   text-align: center;
   font-size: 1.9rem;
+  font-weight: 500;
   width: 90%;
   height: 80%;
 `;
@@ -79,13 +82,14 @@ export const MovieButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-
+  font-weight: 500;
   height: 4rem;
   border: 1px solid white;
   background-color: transparent;
   color: #fff;
   transition: all 0.2s;
   font-size: 1.5rem;
+  border-radius: 0.5rem;
   cursor: pointer;
   outline: none;
   :hover {

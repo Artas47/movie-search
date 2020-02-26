@@ -1,18 +1,10 @@
 import styled from "styled-components";
-import backgroundImg from "./assets/background.jpg";
 
 export const App = styled.main`
   width: 100vw;
   display: flex;
   flex-direction: column;
-  background-size: cover;
-  background-image: linear-gradient(
-      to bottom,
-      rgb(0, 0, 0, 0.8),
-      rgb(0, 0, 0, 0.8)
-    ),
-    url(${backgroundImg});
-  background-position: center;
+  background-color: #1a1e25;
   overflow-y: hidden;
   margin-right: auto;
   height: 100vh;

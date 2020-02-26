@@ -7,14 +7,14 @@ export const Sidebar = styled.div`
   height: 100vh;
   width: 20%;
   z-index: 7;
-  background-color: rgb(0, 0, 0, 0.8);
+  background-color: rgb(0, 0, 0, 0.5);
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   word-wrap: break-word;
   overflow-y: scroll;
-  border-left: 1px solid #fff;
+  border-left: 2px solid #303c52;
   @media only screen and (max-width: 1000px) {
     width: 30%;
   }

@@ -27,6 +27,7 @@ export const ModalContent = styled.div`
   height: 60rem;
   background-color: rgba(0, 0, 0, 0.95);
   display: flex;
+  /* border: 3px solid #2f3540; */
 
   ::-webkit-scrollbar {
     width: 0px; /* Remove scrollbar space */
