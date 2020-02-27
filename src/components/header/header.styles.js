@@ -43,3 +43,13 @@ export const OutSVG = styled(Out)`
   height: 3rem;
   cursor: pointer;
 `;
+
+export const Logo = styled.h1`
+  position: absolute;
+  color: #fff;
+  font-size: 3.5rem;
+  z-index: 999;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 5rem;
+`;

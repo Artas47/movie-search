@@ -14,7 +14,7 @@ const MovieItemDetails = props => {
     };
     fetchMovieDetails(props.match.params.id);
     return () => dispatch({ type: "MOVIE_UNMOUNT" });
-  }, [props.match.params.id]);
+  }, [dispatch, props.match.params.id]);
 
   return <Modal movie={currentMovie} />;
 };

@@ -20,7 +20,7 @@ const SideBar = () => {
         {!moviesToRender.length ? "Favorite movies list is empty" : ""}
       </Styled.SidebarEmptyText>
       {moviesToRender.map(item => (
-        <SidebarItem movie={item} />
+        <SidebarItem key={item.imdbID} movie={item} />
       ))}
     </Styled.Sidebar>
   );

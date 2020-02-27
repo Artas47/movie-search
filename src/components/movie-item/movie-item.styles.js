@@ -1,6 +1,4 @@
 import styled, { css } from "styled-components";
-import { Link } from "react-router-dom";
-
 export const MovieButtonContainer = styled.div`
   position: absolute;
   top: 35%;
@@ -30,10 +28,9 @@ export const MovieItemImg = styled.div`
   overflow: hidden;
   transition: all 0.2s;
 `;
-export const MovieItem = styled(Link)`
+export const MovieItem = styled.div`
   width: 30rem;
   height: 43rem;
-  background-color: rgb(0, 0, 0, 0.8);
   box-shadow: 0 1rem 2rem rgb(0, 0, 0, 0.9);
   color: white;
   margin: 0 2rem;
@@ -63,6 +60,17 @@ export const MovieItemDescBox = styled.div`
   justify-content: center;
   align-items: center;
   cursor: default;
+  ${props =>
+    props.isfav &&
+    css`
+      background: linear-gradient(
+        0deg,
+        rgba(46, 41, 144, 1) 0%,
+        rgba(65, 122, 191, 0.5914740896358543) 6%,
+        rgba(66, 82, 218, 0) 8%
+      );
+    `};
+  background-color: rgba(0, 0, 0, 0.5);
 `;
 
 export const MovieItemTitle = styled.h1`

@@ -34,7 +34,7 @@ export const MovieItem = props => {
             Details
           </Styled.MovieButton>
         </Styled.MovieButtonContainer>
-        <Styled.MovieItemDescBox>
+        <Styled.MovieItemDescBox isfav={isFav(props.movie)}>
           <Styled.MovieItemTitle>
             {props.title} <br /> ({props.type} {props.year})
           </Styled.MovieItemTitle>

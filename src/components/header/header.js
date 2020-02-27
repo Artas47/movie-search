@@ -7,6 +7,7 @@ export const Header = () => {
   const [state, dispatch] = useStateValue();
   return (
     <Styled.Header showSidebar={state.showSidebar}>
+      {/* <Styled.Logo>movie-search</Styled.Logo> */}
       <SearchBar />
       {state.showSidebar ? (
         <Styled.InSVG
