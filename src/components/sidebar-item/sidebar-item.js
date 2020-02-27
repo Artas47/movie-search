@@ -2,6 +2,7 @@ import React from "react";
 import * as Styled from "./sidebar-item.styles";
 import { useHistory } from "react-router-dom";
 import { useStateValue } from "../../context/state";
+import { REMOVE_FAV_MOVIE } from "../../context/types";
 
 const SidebarItem = props => {
   let history = useHistory();
@@ -15,7 +16,7 @@ const SidebarItem = props => {
       <Styled.SidebarItemCancel
         onClick={e => {
           e.stopPropagation();
-          dispatch({ type: "REMOVE_FAV_MOVIE", movie: props.movie });
+          dispatch({ type: REMOVE_FAV_MOVIE, movie: props.movie });
         }}
       />
     </Styled.SidebarItem>

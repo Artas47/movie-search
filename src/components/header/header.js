@@ -2,6 +2,7 @@ import React from "react";
 import * as Styled from "./header.styles";
 import SearchBar from "../search-bar/search-bar";
 import { useStateValue } from "../../context/state";
+import { TOGGLE_SIDEBAR } from "../../context/types";
 
 export const Header = () => {
   const [state, dispatch] = useStateValue();
@@ -14,7 +15,7 @@ export const Header = () => {
           onClick={() => {
             localStorage.setItem("showSidebar", false);
             dispatch({
-              type: "TOGGLE_SIDEBAR",
+              type: TOGGLE_SIDEBAR,
               showSidebar: localStorage.showSidebar
             });
           }}
@@ -24,7 +25,7 @@ export const Header = () => {
           onClick={() => {
             localStorage.setItem("showSidebar", true);
             dispatch({
-              type: "TOGGLE_SIDEBAR",
+              type: TOGGLE_SIDEBAR,
               showSidebar: localStorage.showSidebar
             });
           }}

@@ -2,18 +2,23 @@ import React, { useState } from "react";
 import * as Styled from "./search-bar.styles";
 import { useStateValue } from "../../context/state";
 import axios from "axios";
+import {
+  SEARCH_TERM_CHANGE,
+  SEARCH_MOVIES_START,
+  SEARCH_MOVIES_SUCCESS
+} from "../../context/types";
 
 const SearchBar = () => {
   const [state, dispatch] = useStateValue();
   const [searchTerm, setSearchTerm] = useState("");
   const onSubmitHandler = async e => {
     e.preventDefault();
-    dispatch({ type: "SEARCH_TERM_CHANGE", searchTerm: searchTerm });
-    dispatch({ type: "SEARCH_MOVIES_START" });
+    dispatch({ type: SEARCH_TERM_CHANGE, searchTerm: searchTerm });
+    dispatch({ type: SEARCH_MOVIES_START });
     const response = await axios.get(
       `https://www.omdbapi.com/?s="${searchTerm.trim()}"&apikey=c6f9646d`
     );
-    dispatch({ type: "SEARCH_MOVIES_SUCCESS", movies: response.data.Search });
+    dispatch({ type: SEARCH_MOVIES_SUCCESS, movies: response.data.Search });
   };
 
   const onChangeHandler = e => {

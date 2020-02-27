@@ -3,6 +3,7 @@ import * as Styled from "./movie-item.styles";
 import Fade from "../fade-animation/fade";
 import { useHistory } from "react-router-dom";
 import { useStateValue } from "../../context/state";
+import { REMOVE_FAV_MOVIE, ADD_FAV_MOVIE } from "../../context/types";
 
 export const MovieItem = props => {
   let history = useHistory();
@@ -20,9 +21,9 @@ export const MovieItem = props => {
           <Styled.MovieButton
             onClick={() => {
               if (isFav(props.movie)) {
-                dispatch({ type: "REMOVE_FAV_MOVIE", movie: props.movie });
+                dispatch({ type: REMOVE_FAV_MOVIE, movie: props.movie });
               } else {
-                dispatch({ type: "ADD_FAV_MOVIE", movie: props.movie });
+                dispatch({ type: ADD_FAV_MOVIE, movie: props.movie });
               }
             }}
           >
@@ -39,24 +40,6 @@ export const MovieItem = props => {
             {props.title} <br /> ({props.type} {props.year})
           </Styled.MovieItemTitle>
         </Styled.MovieItemDescBox>
-        {/* <Styled.MovieStar
-          onClick={() => {
-            if (isFav(props.movie)) {
-              dispatch({ type: "REMOVE_FAV_MOVIE", movie: props.movie });
-              // localStorage.setItem(
-              //   "favMovies",
-              //   JSON.stringify(state.favMovies)
-              // );
-            } else {
-              dispatch({ type: "ADD_FAV_MOVIE", movie: props.movie });
-              // localStorage.setItem(
-              //   "favMovies",
-              //   JSON.stringify(state.favMovies)
-              // );
-            }
-          }}
-          isfav={isFav(props.movie)}
-        /> */}
       </Styled.MovieItem>
     </Fade>
   );
