@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Movie-search allows us to search for any movies and learn about its plot etc.
+
+LIVE : https://movie-search-live.herokuapp.com/
 
 ## Available Scripts
 
