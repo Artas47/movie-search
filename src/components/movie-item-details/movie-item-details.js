@@ -8,7 +8,7 @@ const MovieItemDetails = props => {
   useEffect(() => {
     const fetchMovieDetails = async id => {
       const response = await Axios.get(
-        `http://www.omdbapi.com/?i=${id}&apikey=c6f9646d`
+        `https://www.omdbapi.com/?i=${id}&apikey=c6f9646d`
       );
       dispatch({ type: "FETCH_MOVIE", movie: response.data });
     };
