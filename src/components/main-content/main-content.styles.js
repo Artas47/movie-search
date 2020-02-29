@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { ReactComponent as Wave } from "../../assets/wave.svg";
 
 export const MainContent = styled.div`
   height: 100vh;
@@ -8,8 +9,8 @@ export const MainContent = styled.div`
   display: flex;
   justify-content: center;
   ::-webkit-scrollbar {
-    width: 0px; /* Remove scrollbar space */
-    background: transparent; /* Optional: just make scrollbar invisible */
+    width: 0px;
+    background: transparent;
   }
   @media only screen and (max-width: 1000px) {
     width: 70%;
@@ -34,4 +35,12 @@ export const Text = styled.h3`
   @media only screen and (max-width: 650px) {
     margin-right: 0;
   } */
+`;
+
+export const WaveSVG = styled(Wave)`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  fill: rgba(0, 0, 0, 0.9);
+  width: 100vw;
 `;

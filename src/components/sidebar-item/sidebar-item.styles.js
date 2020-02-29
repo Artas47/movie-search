@@ -11,6 +11,10 @@ export const SidebarItem = styled.div`
   position: relative;
 
   border-radius: 1rem;
+  transition: all 0.2s;
+  :hover {
+    background-color: #2f3540;
+  }
 
   :not(:last-child) {
     margin-bottom: 1rem;

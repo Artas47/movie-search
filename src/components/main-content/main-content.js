@@ -18,6 +18,7 @@ export const MainContent = () => {
   };
   return (
     <Styled.MainContent showSidebar={showSidebar}>
+      <Styled.WaveSVG />
       {renderMovieList()}
     </Styled.MainContent>
   );

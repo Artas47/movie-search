@@ -70,7 +70,7 @@ export const MovieItemDescBox = styled.div`
         rgba(66, 82, 218, 0) 8%
       );
     `};
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #14171c;
 `;
 
 export const MovieItemTitle = styled.h1`
