@@ -9,18 +9,16 @@ export const SidebarItem = styled.div`
   align-items: center;
   cursor: pointer;
   position: relative;
-
+  margin-bottom: 2rem;
   border-radius: 1rem;
   transition: all 0.2s;
   :hover {
     background-color: #2f3540;
   }
-
-  :not(:last-child) {
+  @media only screen and (max-width: 1400px) {
     margin-bottom: 1rem;
   }
-
-  @media only screen and (max-width: 1400px) {
+  @media only screen and (max-width: 700px) {
     height: 13rem;
   }
   @media only screen and (max-width: 550px) {

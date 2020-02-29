@@ -60,6 +60,7 @@ export const MovieItemDescBox = styled.div`
   justify-content: center;
   align-items: center;
   cursor: default;
+  border-top: 2px solid #2f3540;
   ${props =>
     props.isfav &&
     css`
@@ -70,7 +71,7 @@ export const MovieItemDescBox = styled.div`
         rgba(66, 82, 218, 0) 8%
       );
     `};
-  background-color: #14171c;
+  background-color: #0d0f12;
 `;
 
 export const MovieItemTitle = styled.h1`

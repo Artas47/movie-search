@@ -14,6 +14,7 @@ export const Sidebar = styled.div`
   align-items: center;
   word-wrap: break-word;
   overflow-y: scroll;
+  overflow-x: hidden;
   border-left: 2px solid #303c52;
   @media only screen and (max-width: 1000px) {
     width: 30%;
