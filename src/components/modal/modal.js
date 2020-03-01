@@ -35,7 +35,9 @@ const Modal = ({ movie }) => {
                     {movie.Genre}
                   </Styled.ModalDetailsItem>
                 </Styled.ModalDetails>
-                <Styled.ModalPlot>{movie.Plot}</Styled.ModalPlot>
+                <Styled.ModalPlot>
+                  {movie.Plot === "N/A" ? "Plot is not available" : movie.Plot}
+                </Styled.ModalPlot>
                 <RatingBox />
                 <Styled.ModalCancel onClick={() => history.push("/")} />
               </Styled.ModalDescription>

@@ -11,7 +11,9 @@ const SidebarItem = props => {
     <Styled.SidebarItem
       onClick={() => history.push(`/movie/${props.movie.imdbID}`)}
     >
-      <Styled.SidebarItemImage src={props.movie.Poster} />
+      <Styled.SidebarItemImage src={props.movie.Poster}>
+        {props.movie.Poster === "N/A" ? "Image not found" : ""}
+      </Styled.SidebarItemImage>
       <Styled.SidebarItemTitle>{props.movie.Title}</Styled.SidebarItemTitle>
       <Styled.SidebarItemCancel
         onClick={e => {

@@ -54,8 +54,12 @@ export const LogoPNG = styled.img`
     width: 17rem;
   }
   @media only screen and (max-width: 900px) {
+    /* top: -4.5rem;
+    left: -1rem; */
+    width: 15rem;
+  }
+  @media only screen and (max-width: 850px) {
     top: -4.5rem;
     left: -1rem;
-    width: 15rem;
   }
 `;

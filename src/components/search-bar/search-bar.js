@@ -31,6 +31,7 @@ const SearchBar = () => {
         type="text"
         onChange={onChangeHandler}
         placeholder="Look for movies"
+        value={searchTerm}
       />
     </Styled.Form>
   );

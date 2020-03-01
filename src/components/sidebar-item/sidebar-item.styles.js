@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ReactComponent as Cancel } from "../../assets/cross.svg";
 
 export const SidebarItem = styled.div`
@@ -30,13 +30,30 @@ export const SidebarItem = styled.div`
   }
 `;
 
-export const SidebarItemImage = styled.img`
+export const SidebarItemImage = styled.div`
   height: 100%;
-  min-width: 10rem;
+  width: 10rem;
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ${({ src }) =>
+    src &&
+    css`
+      background-image: ${props => `url(${props.src})`};
+      background-size: cover;
+      background-position: top;
+    `}
+  background-color: #000;
   @media only screen and (max-width: 1400px) {
     min-width: 8rem;
+  }
+  @media only screen and (max-width: 900px) {
+    font-size: 1.2rem;
   }
   @media only screen and (max-width: 550px) {
     min-width: 6rem;
