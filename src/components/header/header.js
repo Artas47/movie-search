@@ -3,12 +3,14 @@ import * as Styled from "./header.styles";
 import SearchBar from "../search-bar/search-bar";
 import { useStateValue } from "../../context/state";
 import { TOGGLE_SIDEBAR } from "../../context/types";
+import Logo from "../../assets/logo.png";
 
 export const Header = () => {
   const [state, dispatch] = useStateValue();
   return (
     <Styled.Header showSidebar={state.showSidebar}>
       {/* <Styled.Logo>movie-search</Styled.Logo> */}
+      <Styled.LogoPNG src={Logo} />
       <SearchBar />
       {state.showSidebar ? (
         <Styled.InSVG

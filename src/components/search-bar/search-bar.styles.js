@@ -29,7 +29,9 @@ export const Input = styled.input`
     width: 100px;
     color: white;
   }
-
+  @media only screen and (max-width: 900px) {
+    margin-top: 3rem;
+  }
   @media only screen and (max-width: 550px) {
     width: 80%;
   }

@@ -17,6 +17,9 @@ export const Header = styled.header`
   @media only screen and (max-width: 1000px) {
     width: ${({ showSidebar }) => (showSidebar ? "70%" : "100%")};
   }
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 
 export const InSVG = styled(In)`
@@ -44,12 +47,15 @@ export const OutSVG = styled(Out)`
   cursor: pointer;
 `;
 
-export const Logo = styled.h1`
+export const LogoPNG = styled.img`
   position: absolute;
-  color: #fff;
-  font-size: 3.5rem;
-  z-index: 999;
-  top: 50%;
-  transform: translate(0, -50%);
-  left: 5rem;
+  left: 1rem;
+  @media only screen and (max-width: 1000px) {
+    width: 17rem;
+  }
+  @media only screen and (max-width: 900px) {
+    top: -4.5rem;
+    left: -1rem;
+    width: 15rem;
+  }
 `;
