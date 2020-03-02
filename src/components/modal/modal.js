@@ -19,7 +19,11 @@ const Modal = ({ movie }) => {
               onClick={e => e.stopPropagation()}
               showSidebar={showSidebar}
             >
-              <Styled.ModalImage src={movie.Poster} showSidebar={showSidebar} />
+              <Styled.ModalImage
+                alt={movie.Title}
+                src={movie.Poster}
+                showSidebar={showSidebar}
+              />
               <Styled.ModalDescription>
                 <Styled.ModalTitle>
                   {movie.Title.toUpperCase()}

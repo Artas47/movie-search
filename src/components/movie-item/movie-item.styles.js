@@ -6,6 +6,7 @@ export const MovieButtonContainer = styled.div`
   transform: translate(-50%, 0);
   display: flex;
   flex-direction: column;
+  width: 100%;
   opacity: 0;
   transition: all 0.2s;
 `;
@@ -87,18 +88,20 @@ export const MovieItemTitle = styled.h1`
 `;
 
 export const MovieButton = styled.button`
-  width: 12.5rem;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 500;
   height: 4rem;
-  border: 1px solid white;
+  border: none;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
   background-color: transparent;
   color: #fff;
   transition: all 0.2s;
-  font-size: 1.5rem;
-  border-radius: 0.5rem;
+  font-size: 1.9rem;
+  font-weight: 500;
   cursor: pointer;
   outline: none;
   :hover {

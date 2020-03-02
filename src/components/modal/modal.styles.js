@@ -27,6 +27,7 @@ export const ModalContent = styled.div`
   height: 60rem;
   background-color: rgba(0, 0, 0, 0.95);
   display: flex;
+  box-shadow: 0 1rem 2rem rgb(0, 0, 0, 0.9);
   /* border: 3px solid #2f3540; */
 
   ::-webkit-scrollbar {
@@ -171,10 +172,10 @@ export const ModalDetailsItem = styled.p`
 
 export const ModalCancel = styled(Cancel)`
   position: absolute;
-  right: 0.5rem;
-  top: 0.5rem;
-  width: 2rem;
-  height: 2rem;
+  right: 1rem;
+  top: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
   z-index: 999;
   cursor: pointer;
   fill: #fff;
