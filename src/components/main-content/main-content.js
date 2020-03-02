@@ -7,7 +7,7 @@ import WaveSVG from "../wave-svg/wave-svg";
 export const MainContent = () => {
   const [{ searchTerm, movies, showSidebar }] = useStateValue();
   const renderMovieList = () => {
-    if (searchTerm.length && !movies) {
+    if (searchTerm && !movies) {
       return <Styled.Text>Movies not found...</Styled.Text>;
     }
     if (!searchTerm) {
