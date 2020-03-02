@@ -2,36 +2,17 @@ import React from "react";
 import * as Styled from "./header.styles";
 import SearchBar from "../search-bar/search-bar";
 import { useStateValue } from "../../context/state";
-import { TOGGLE_SIDEBAR } from "../../context/types";
 import Logo from "../../assets/logo.png";
+import InSVG from "../in-svg/in-svg";
+import OutSVG from "../out-svg/out-svg";
 
 export const Header = () => {
-  const [state, dispatch] = useStateValue();
+  const [state] = useStateValue();
   return (
     <Styled.Header showSidebar={state.showSidebar}>
       <Styled.LogoPNG src={Logo} alt="logo" />
       <SearchBar />
-      {state.showSidebar ? (
-        <Styled.InSVG
-          onClick={() => {
-            localStorage.setItem("showSidebar", false);
-            dispatch({
-              type: TOGGLE_SIDEBAR,
-              showSidebar: localStorage.showSidebar
-            });
-          }}
-        />
-      ) : (
-        <Styled.OutSVG
-          onClick={() => {
-            localStorage.setItem("showSidebar", true);
-            dispatch({
-              type: TOGGLE_SIDEBAR,
-              showSidebar: localStorage.showSidebar
-            });
-          }}
-        />
-      )}
+      {state.showSidebar ? <InSVG /> : <OutSVG />}
     </Styled.Header>
   );
 };

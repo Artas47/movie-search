@@ -6,7 +6,7 @@ import { GlobalStyles } from "./GlobalStyles";
 import { Route, BrowserRouter } from "react-router-dom";
 
 import Header from "./components/header/header";
-import MovieItemDetails from "./components/movie-item-details/movie-item-details";
+import MovieItemDetailsContainer from "./components/movie-item-details/movie-item-details.container";
 import { StateProvider } from "./context/state";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <BrowserRouter>
           <SideBar />
           <Route path="/" component={MainContent} />
-          <Route path="/movie/:id" component={MovieItemDetails} />
+          <Route path="/movie/:id" component={MovieItemDetailsContainer} />
         </BrowserRouter>
       </Styled.App>
     </StateProvider>

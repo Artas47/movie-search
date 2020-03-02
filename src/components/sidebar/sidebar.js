@@ -4,7 +4,7 @@ import { useStateValue } from "../../context/state";
 import SidebarItem from "../sidebar-item/sidebar-item";
 
 const SideBar = () => {
-  const [{ favMovies, showSidebar }, dispatch] = useStateValue();
+  const [{ favMovies, showSidebar }] = useStateValue();
   const [moviesToRender, setMoviesToRender] = useState([]);
   useEffect(() => {
     localStorage.setItem("favMovies", JSON.stringify(favMovies));
@@ -19,8 +19,8 @@ const SideBar = () => {
       <Styled.SidebarEmptyText>
         {!moviesToRender.length ? "Favorite movies list is empty" : ""}
       </Styled.SidebarEmptyText>
-      {moviesToRender.map(item => (
-        <SidebarItem key={item.imdbID} movie={item} />
+      {moviesToRender.map(movie => (
+        <SidebarItem key={movie.imdbID} movie={movie} />
       ))}
     </Styled.Sidebar>
   );

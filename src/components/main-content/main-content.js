@@ -2,11 +2,12 @@ import React from "react";
 import * as Styled from "./main-content.styles";
 import MovieList from "../movie-list/movie-list";
 import { useStateValue } from "../../context/state";
+import WaveSVG from "../wave-svg/wave-svg";
 
 export const MainContent = () => {
   const [{ searchTerm, movies, showSidebar }] = useStateValue();
   const renderMovieList = () => {
-    if (searchTerm && !movies) {
+    if (searchTerm.length && !movies) {
       return <Styled.Text>Movies not found...</Styled.Text>;
     }
     if (!searchTerm) {
@@ -18,8 +19,8 @@ export const MainContent = () => {
   };
   return (
     <Styled.MainContent showSidebar={showSidebar}>
-      <Styled.WaveSVG />
       {renderMovieList()}
+      <WaveSVG />
     </Styled.MainContent>
   );
 };

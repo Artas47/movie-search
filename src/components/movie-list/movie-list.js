@@ -3,30 +3,18 @@ import MovieItem from "../movie-item/movie-item";
 import * as Styled from "./movie-list.styles";
 import { Spinner } from "../spinner/spinner";
 import { useStateValue } from "../../context/state";
+import { filterMovies } from "./filterMovies";
 
 export const MovieList = () => {
-  const [{ movies, isLoading, showSidebar }, dispatch] = useStateValue();
-  //filtering movies to eliminate duplicates
-  let filteredMovies = [...new Set(movies.map(item => item.imdbID))].map(id => {
-    return movies.find(a => a.imdbID === id);
-  });
+  const [{ movies, isLoading, showSidebar }] = useStateValue();
+  const filteredMovies = filterMovies(movies);
   if (isLoading) {
     return <Spinner />;
   }
   return (
     <Styled.MovieList showSidebar={showSidebar}>
-      {filteredMovies.map(item => {
-        return (
-          <MovieItem
-            key={item.imdbID}
-            id={item.imdbID}
-            poster={item.Poster}
-            title={item.Title}
-            year={item.Year}
-            type={item.Type}
-            movie={item}
-          />
-        );
+      {filteredMovies.map(movie => {
+        return <MovieItem movie={movie} />;
       })}
     </Styled.MovieList>
   );

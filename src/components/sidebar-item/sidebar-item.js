@@ -4,21 +4,19 @@ import { useHistory } from "react-router-dom";
 import { useStateValue } from "../../context/state";
 import { REMOVE_FAV_MOVIE } from "../../context/types";
 
-const SidebarItem = props => {
+const SidebarItem = ({ movie, movie: { imdbID, Poster, Title } }) => {
   let history = useHistory();
   let [state, dispatch] = useStateValue();
   return (
-    <Styled.SidebarItem
-      onClick={() => history.push(`/movie/${props.movie.imdbID}`)}
-    >
-      <Styled.SidebarItemImage src={props.movie.Poster}>
-        {props.movie.Poster === "N/A" ? "Image not found" : ""}
+    <Styled.SidebarItem onClick={() => history.push(`/movie/${imdbID}`)}>
+      <Styled.SidebarItemImage src={Poster}>
+        {Poster === "N/A" ? "Image not found" : ""}
       </Styled.SidebarItemImage>
-      <Styled.SidebarItemTitle>{props.movie.Title}</Styled.SidebarItemTitle>
+      <Styled.SidebarItemTitle>{Title}</Styled.SidebarItemTitle>
       <Styled.SidebarItemCancel
         onClick={e => {
           e.stopPropagation();
-          dispatch({ type: REMOVE_FAV_MOVIE, movie: props.movie });
+          dispatch({ type: REMOVE_FAV_MOVIE, movie: movie });
         }}
       />
     </Styled.SidebarItem>

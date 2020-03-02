@@ -9,7 +9,7 @@ const RatingBox = () => {
     }
   ] = useStateValue();
   if (imdbRating === "N/A") {
-    return <div></div>;
+    return <></>;
   }
   return (
     <Styled.RatingBoxOuter>

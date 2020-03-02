@@ -5,7 +5,10 @@ import { useHistory } from "react-router-dom";
 import { useStateValue } from "../../context/state";
 import { REMOVE_FAV_MOVIE, ADD_FAV_MOVIE } from "../../context/types";
 
-export const MovieItem = props => {
+export const MovieItem = ({
+  movie,
+  movie: { Poster, imdbID, Title, Type, Year }
+}) => {
   let history = useHistory();
   const [state, dispatch] = useStateValue();
   const isFav = movie => {
@@ -14,30 +17,28 @@ export const MovieItem = props => {
   return (
     <Fade in={true}>
       <Styled.MovieItem>
-        <Styled.MovieItemImg src={props.poster}>
-          {props.poster === "N/A" ? "Image not found" : ""}
+        <Styled.MovieItemImg src={Poster}>
+          {Poster === "N/A" ? "Image not found" : ""}
         </Styled.MovieItemImg>
         <Styled.MovieButtonContainer>
           <Styled.MovieButton
             onClick={() => {
-              if (isFav(props.movie)) {
-                dispatch({ type: REMOVE_FAV_MOVIE, movie: props.movie });
+              if (isFav(movie)) {
+                dispatch({ type: REMOVE_FAV_MOVIE, movie: movie });
               } else {
-                dispatch({ type: ADD_FAV_MOVIE, movie: props.movie });
+                dispatch({ type: ADD_FAV_MOVIE, movie: movie });
               }
             }}
           >
-            {isFav(props.movie) ? " Remove from favorites" : "Add to favorites"}
+            {isFav(movie) ? "Remove from favorites" : "Add to favorites"}
           </Styled.MovieButton>
-          <Styled.MovieButton
-            onClick={() => history.push(`/movie/${props.id}`)}
-          >
+          <Styled.MovieButton onClick={() => history.push(`/movie/${imdbID}`)}>
             Details
           </Styled.MovieButton>
         </Styled.MovieButtonContainer>
-        <Styled.MovieItemDescBox isfav={isFav(props.movie)}>
+        <Styled.MovieItemDescBox isfav={isFav(movie)}>
           <Styled.MovieItemTitle>
-            {props.title} <br /> ({props.type} {props.year})
+            {Title} <br /> ({Type} {Year})
           </Styled.MovieItemTitle>
         </Styled.MovieItemDescBox>
       </Styled.MovieItem>
