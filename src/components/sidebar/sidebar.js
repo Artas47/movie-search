@@ -16,7 +16,7 @@ const SideBar = () => {
   }
   return (
     <Styled.Sidebar>
-      <Styled.SidebarEmptyText>
+      <Styled.SidebarEmptyText data-testid="test-sidebar-message">
         {!moviesToRender.length ? "Favorite movies list is empty" : ""}
       </Styled.SidebarEmptyText>
       {moviesToRender.map(movie => (

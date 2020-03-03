@@ -9,7 +9,10 @@ const SidebarItem = ({ movie, movie: { imdbID, Poster, Title } }) => {
   let [state, dispatch] = useStateValue();
   return (
     <Styled.SidebarItem onClick={() => history.push(`/movie/${imdbID}`)}>
-      <Styled.SidebarItemImage src={Poster}>
+      <Styled.SidebarItemImage
+        src={Poster}
+        data-testid="test-sidebarItem-message"
+      >
         {Poster === "N/A" ? "Image not found" : ""}
       </Styled.SidebarItemImage>
       <Styled.SidebarItemTitle>{Title}</Styled.SidebarItemTitle>

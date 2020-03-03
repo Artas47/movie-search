@@ -8,10 +8,11 @@ import { Route, BrowserRouter } from "react-router-dom";
 import Header from "./components/header/header";
 import MovieItemDetailsContainer from "./components/movie-item-details/movie-item-details.container";
 import { StateProvider } from "./context/state";
+import { initialState } from "./context/initialState";
 
 function App() {
   return (
-    <StateProvider>
+    <StateProvider initialState={initialState}>
       <Styled.App>
         <GlobalStyles />
         <Header />

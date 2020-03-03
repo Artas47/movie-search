@@ -3,7 +3,7 @@ import * as Styled from "./spinner.styles";
 
 export const Spinner = () => {
   return (
-    <Styled.SpinnerOverlay>
+    <Styled.SpinnerOverlay data-testid="test-spinner">
       <Styled.SpinnerContainer />
     </Styled.SpinnerOverlay>
   );

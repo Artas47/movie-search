@@ -17,7 +17,7 @@ export const MovieItem = ({
   return (
     <Fade in={true}>
       <Styled.MovieItem>
-        <Styled.MovieItemImg src={Poster}>
+        <Styled.MovieItemImg src={Poster} data-testid="test-img-container">
           {Poster === "N/A" ? "Image not found" : ""}
         </Styled.MovieItemImg>
         <Styled.MovieButtonContainer>
@@ -29,6 +29,7 @@ export const MovieItem = ({
                 dispatch({ type: ADD_FAV_MOVIE, movie: movie });
               }
             }}
+            data-testid="test-btn"
           >
             {isFav(movie) ? "Remove from favorites" : "Add to favorites"}
           </Styled.MovieButton>

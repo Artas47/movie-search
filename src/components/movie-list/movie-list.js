@@ -12,9 +12,9 @@ export const MovieList = () => {
     return <Spinner />;
   }
   return (
-    <Styled.MovieList showSidebar={showSidebar}>
+    <Styled.MovieList showSidebar={showSidebar} data-testid="test-list">
       {filteredMovies.map(movie => {
-        return <MovieItem movie={movie} />;
+        return <MovieItem key={movie.imdbID} movie={movie} />;
       })}
     </Styled.MovieList>
   );

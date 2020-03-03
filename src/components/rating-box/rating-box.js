@@ -15,7 +15,7 @@ const RatingBox = () => {
     <Styled.RatingBoxOuter>
       <Styled.RatingText>Imdb Rating</Styled.RatingText>
       <Styled.RatingBoxInner>
-        <Styled.RatingNumber>
+        <Styled.RatingNumber data-testid="test-rating-number">
           {imdbRating}
           <Styled.RatingNumberSmall>/10</Styled.RatingNumberSmall>
         </Styled.RatingNumber>
