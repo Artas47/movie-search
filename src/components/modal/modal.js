@@ -18,6 +18,7 @@ const Modal = ({ movie }) => {
             <Styled.ModalContent
               onClick={e => e.stopPropagation()}
               showSidebar={showSidebar}
+              data-testid="test-modal-content"
             >
               <Styled.ModalImage
                 alt={movie.Title}
@@ -53,10 +54,7 @@ const Modal = ({ movie }) => {
       </Styled.Modal>
     );
   };
-  return ReactDOM.createPortal(
-    renderModalContent(),
-    document.getElementById("modal")
-  );
+  return ReactDOM.createPortal(renderModalContent(), document.body);
 };
 
 export default Modal;

@@ -54,5 +54,5 @@ test("if spinner shows when isLoading is true", () => {
   );
 
   const { getByTestId } = render(tree, { wrapper: MemoryRouter });
-  expect(getByTestId("test-spinner")).toBeTruthy();
+  expect(getByTestId("test-spinner")).toBeInTheDocument();
 });

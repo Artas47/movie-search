@@ -5,12 +5,12 @@ test("should call axios and return movies", async () => {
   mockAxios.get.mockImplementationOnce(() =>
     Promise.resolve({
       data: {
-        results: [{ Title: "Prison Break" }]
+        results: [{ Title: "Prison Break", imdbID: "123" }]
       }
     })
   );
   const response = await movies("prison");
-  expect(response.results).toEqual([{ Title: "Prison Break" }]);
+  expect(response.results).toEqual([{ Title: "Prison Break", imdbID: "123" }]);
   expect(mockAxios.get).toHaveBeenCalledTimes(1);
   expect(mockAxios.get).toHaveBeenCalledWith(
     'https://www.omdbapi.com/?s="prison"&apikey=c6f9646d'

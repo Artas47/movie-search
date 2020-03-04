@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import * as Styled from "./search-bar.styles";
 import { useStateValue } from "../../context/state";
 import axios from "axios";
+import fetchMovies from "../../api/movies";
 import {
   SEARCH_TERM_CHANGE,
   SEARCH_MOVIES_START,
@@ -15,10 +16,8 @@ const SearchBar = () => {
     e.preventDefault();
     dispatch({ type: SEARCH_TERM_CHANGE, searchTerm });
     dispatch({ type: SEARCH_MOVIES_START });
-    const response = await axios.get(
-      `https://www.omdbapi.com/?s="${searchTerm.trim()}"&apikey=c6f9646d`
-    );
-    dispatch({ type: SEARCH_MOVIES_SUCCESS, movies: response.data.Search });
+    const response = await fetchMovies(searchTerm);
+    dispatch({ type: SEARCH_MOVIES_SUCCESS, movies: response.Search });
   };
 
   const onChangeHandler = e => {
