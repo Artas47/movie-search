@@ -4,7 +4,6 @@ import "@testing-library/jest-dom/extend-expect";
 import { StateProvider } from "../../../context/state";
 import MainContent from "../main-content";
 import { initialState } from "../../../context/initialState";
-import { MemoryRouter } from "react-router-dom";
 
 test("default message appear", () => {
   const tree = (
@@ -17,7 +16,7 @@ test("default message appear", () => {
   expect(text).toHaveTextContent(/Search Movies/i);
 });
 
-test("message when movies wasn't found appear", () => {
+test("proper message appear when movies wasn't founds", () => {
   const initialState = {
     searchTerm: "prison"
   };
