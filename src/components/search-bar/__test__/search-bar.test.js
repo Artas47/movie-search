@@ -1,4 +1,4 @@
-import movie from "../../../api/movie";
+import movies from "../../../api/movies";
 import mockAxios from "axios";
 
 test("should call axios and return movies", async () => {
@@ -9,8 +9,8 @@ test("should call axios and return movies", async () => {
       }
     })
   );
-  const movies = await movie("prison");
-  expect(movies.results).toEqual([{ Title: "Prison Break" }]);
+  const response = await movies("prison");
+  expect(response.results).toEqual([{ Title: "Prison Break" }]);
   expect(mockAxios.get).toHaveBeenCalledTimes(1);
   expect(mockAxios.get).toHaveBeenCalledWith(
     'https://www.omdbapi.com/?s="prison"&apikey=c6f9646d'

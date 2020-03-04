@@ -2,6 +2,8 @@ Movie-search allows us to search for any movies and learn about its plot etc.
 
 LIVE : https://movie-search-live.herokuapp.com/
 
+Still working on this app
+
 ## Available Scripts
 
 In the project directory, you can run:
