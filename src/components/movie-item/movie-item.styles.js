@@ -8,6 +8,7 @@ export const MovieButtonContainer = styled.div`
   flex-direction: column;
   opacity: 0;
   transition: all 0.2s;
+  z-index: 3;
 `;
 export const MovieItemImg = styled.div`
   display: flex;

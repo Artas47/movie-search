@@ -47,6 +47,5 @@ html {
 body {
   font-family: 'Work Sans', sans-serif;
   overflow: hidden;
-  
 }
 `;

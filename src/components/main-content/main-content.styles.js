@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const MainContent = styled.div`
   height: 100vh;
   font-size: 3rem;
-  overflow-y: scroll;
+  overflow-y: hidden;
   width: 80%;
   display: flex;
   justify-content: center;
