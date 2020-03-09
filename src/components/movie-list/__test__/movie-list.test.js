@@ -1,11 +1,8 @@
-import React from "react";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import { StateProvider } from "../../../context/state";
 import MovieList from "../movie-list";
-import { initialState } from "../../../context/initialState";
-import { useStateValue } from "../../../context/state";
 import { MemoryRouter } from "react-router-dom";
+import { treeProvider } from "../../../helpers/treeProvider";
 
 test("if filterMovies function removes duplicates", () => {
   const initialState = {
@@ -30,13 +27,9 @@ test("if filterMovies function removes duplicates", () => {
     favMovies: []
   };
 
-  const tree = (
-    <StateProvider initialState={initialState}>
-      <MovieList />
-    </StateProvider>
-  );
-
-  const { getByTestId } = render(tree, { wrapper: MemoryRouter });
+  const { getByTestId } = render(treeProvider(MovieList, initialState), {
+    wrapper: MemoryRouter
+  });
   const items = getByTestId("test-list");
   expect(items.childElementCount).toBe(1);
 });
@@ -47,12 +40,8 @@ test("if spinner shows when isLoading is true", () => {
     isLoading: true
   };
 
-  const tree = (
-    <StateProvider initialState={initialState}>
-      <MovieList />
-    </StateProvider>
-  );
-
-  const { getByTestId } = render(tree, { wrapper: MemoryRouter });
+  const { getByTestId } = render(treeProvider(MovieList, initialState), {
+    wrapper: MemoryRouter
+  });
   expect(getByTestId("test-spinner")).toBeInTheDocument();
 });
