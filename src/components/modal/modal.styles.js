@@ -109,6 +109,8 @@ export const ModalImage = styled.img`
 
 export const ModalDescription = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
   padding: 3rem;
   background-color: #575757;
   width: 100%;

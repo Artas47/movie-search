@@ -6,10 +6,13 @@ import { useHistory } from "react-router-dom";
 import Fade from "../fade-animation/fade";
 import RatingBox from "../rating-box/rating-box";
 import { useStateValue } from "../../context/state";
+import Button from "../button/button";
+import { isFav } from "../../helpers/isFav";
+import { REMOVE_FAV_MOVIE, ADD_FAV_MOVIE } from "../../context/types";
 
 const Modal = ({ movie }) => {
   let history = useHistory();
-  const [{ showSidebar }] = useStateValue();
+  const [{ showSidebar, favMovies }, dispatch] = useStateValue();
   const renderModalContent = () => {
     return (
       <Styled.Modal onClick={() => history.push("/")} showSidebar={showSidebar}>
@@ -44,6 +47,21 @@ const Modal = ({ movie }) => {
                   {movie.Plot === "N/A" ? "Plot wasn't found." : movie.Plot}
                 </Styled.ModalPlot>
                 <RatingBox />
+                <Button
+                  onClick={() => {
+                    if (isFav(movie, favMovies)) {
+                      dispatch({ type: REMOVE_FAV_MOVIE, movie: movie });
+                    } else {
+                      dispatch({ type: ADD_FAV_MOVIE, movie: movie });
+                    }
+                  }}
+                  data-testid="test-btn"
+                  buttonTitle={
+                    !isFav(movie, favMovies)
+                      ? "Add to watchlist"
+                      : "Remove from watchlist"
+                  }
+                />
                 <Styled.ModalCancel onClick={() => history.push("/")} />
               </Styled.ModalDescription>
             </Styled.ModalContent>

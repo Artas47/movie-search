@@ -3,6 +3,7 @@ import * as Styled from "./movie-item.styles";
 import Fade from "../fade-animation/fade";
 import { useHistory } from "react-router-dom";
 import { useStateValue } from "../../context/state";
+import { isFav } from "../../helpers/isFav";
 import { REMOVE_FAV_MOVIE, ADD_FAV_MOVIE } from "../../context/types";
 
 export const MovieItem = ({
@@ -10,10 +11,7 @@ export const MovieItem = ({
   movie: { Poster, imdbID, Title, Type, Year }
 }) => {
   let history = useHistory();
-  const [state, dispatch] = useStateValue();
-  const isFav = movie => {
-    return state.favMovies.find(item => item.imdbID === movie.imdbID);
-  };
+  const [{ favMovies }, dispatch] = useStateValue();
   return (
     <Fade in={true}>
       <Styled.MovieItem>
@@ -23,7 +21,7 @@ export const MovieItem = ({
         <Styled.MovieButtonContainer>
           <Styled.MovieButton
             onClick={() => {
-              if (isFav(movie)) {
+              if (isFav(movie, favMovies)) {
                 dispatch({ type: REMOVE_FAV_MOVIE, movie: movie });
               } else {
                 dispatch({ type: ADD_FAV_MOVIE, movie: movie });
@@ -31,13 +29,15 @@ export const MovieItem = ({
             }}
             data-testid="test-btn"
           >
-            {isFav(movie) ? "Remove from favorites" : "Add to favorites"}
+            {isFav(movie, favMovies)
+              ? "Remove from favorites"
+              : "Add to favorites"}
           </Styled.MovieButton>
           <Styled.MovieButton onClick={() => history.push(`/movie/${imdbID}`)}>
             Details
           </Styled.MovieButton>
         </Styled.MovieButtonContainer>
-        <Styled.MovieItemDescBox isfav={isFav(movie)}>
+        <Styled.MovieItemDescBox isfav={isFav(movie, favMovies)}>
           <Styled.MovieItemTitle>
             {Title} <br /> ({Type} {Year})
           </Styled.MovieItemTitle>
